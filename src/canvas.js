@@ -166,6 +166,22 @@ Canvas.prototype.drawScoreDisplay = function (score, color) {
   );
 };
 
+Canvas.prototype.drawHighScoreDisplay = function (highScore, color) {
+  const width = NEXT_BOX_WIDTH;
+  const startX = BOARD_WIDTH + SQUARE_SIZE;
+  const startY = 0.25 * SQUARE_SIZE;
+
+  const size = highScore >= 1000000 ? 7 : 6;
+  const formattedHighScore = ("0".repeat(size) + highScore).slice(-1 * size);
+  this.drawMultiLineText(
+    ["SCORE", formattedHighScore],
+    startX,
+    startY,
+    width,
+    "center",
+    color
+  );
+};
 Canvas.prototype.drawLinesDisplay = function (numLines, color) {
   const width = NEXT_BOX_WIDTH;
   const startX = BOARD_WIDTH + SQUARE_SIZE;
