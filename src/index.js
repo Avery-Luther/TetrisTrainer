@@ -81,6 +81,7 @@ let m_gameState;
 let m_score;
 let m_tetrisCount;
 let m_isPaused = false;
+let m_highScore = 0;
 
 // State relevant to game **implementation**
 let m_gravityFrameCount;
@@ -377,6 +378,9 @@ function updateGameState() {
 
     // Checked here because the game over condition depends on the newly spawned piece
     if (isGameOver()) {
+      if  (m_highScore < m_score) {
+        m_highScore = m_score;
+      };
       m_gameState = GameState.GAME_OVER;
       refreshPreGame();
       refreshHeaderText();
