@@ -572,6 +572,7 @@ function drawNextBox(nextPiece) {
 function refreshScoreHUD() {
   m_canvas.drawLevelDisplay(m_level, hudColor);
   m_canvas.drawScoreDisplay(m_score, hudColor);
+  m_canvas.drawHighScoreDisplay(m_highScore, hudColor);
   m_canvas.drawLinesDisplay(m_lines, hudColor);
   m_canvas.drawTetrisRateDisplay(m_tetrisCount, m_lines, hudColor);
 }
